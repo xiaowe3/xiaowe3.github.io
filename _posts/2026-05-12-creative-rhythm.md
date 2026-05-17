@@ -1,27 +1,28 @@
 ---
-title: "一周创作节奏 / A Weekly Creative Rhythm"
+title: "简易自行瞄准装置（2025 电赛 E 题）| 项目介绍"
 date: 2026-05-12
-summary_zh: "把一周拆成三层：输入、试作、发布。"
-summary_en: "A three-layer weekly rhythm: input, prototyping, publishing."
-tags: [创作, 方法]
+summary_zh: "搭建识别到云台控制链路，优化步进电机与姿态闭环。"
+summary_en: "搭建识别到云台控制链路，优化步进电机与姿态闭环。"
+tags: [嵌入式, 电赛, 运动控制]
 ---
 
-<div data-lang="zh">
-  <p>为了稳定输出，我把一周拆成三个层次：</p>
-  <ol>
-    <li><strong>输入：</strong>集中阅读、访谈或拆解，获取一手素材。</li>
-    <li><strong>试作：</strong>把想法做成小样，快速验证结构与节奏。</li>
-    <li><strong>发布：</strong>写成文章或示例，留下可复用的版本。</li>
-  </ol>
-  <p>这种节奏能避免“只读不写”，也能减少“只写不沉淀”。</p>
-</div>
+## 简介
 
-<div data-lang="en">
-  <p>To keep output steady, I split a week into three layers:</p>
-  <ol>
-    <li><strong>Input:</strong> focused reading, interviews, or teardowns for raw material.</li>
-    <li><strong>Prototype:</strong> turn ideas into small drafts to test structure and flow.</li>
-    <li><strong>Publish:</strong> ship a post or demo that becomes a reusable artifact.</li>
-  </ol>
-  <p>The rhythm prevents "read-only" weeks and avoids "write-without-learning" cycles.</p>
-</div>
+基于 MSPM0G3507 的简易瞄准装置，结合 MPU6500 姿态采集与步进电机云台控制，实现目标跟踪与稳定瞄准。
+
+## 负责内容
+
+- 主导下位机软件开发，搭建“识别结果接收—偏差计算—云台控制—状态反馈”执行链路。
+- 编写步进电机驱动与云台状态机逻辑，完成姿态采集与控制闭环。
+- 现场联调并优化限幅、死区与加减速策略，降低抖动与过冲。
+
+## 关键技术
+
+- MSPM0 平台驱动与控制逻辑
+- 步进电机脉冲控制与云台状态机
+- MPU6500 姿态采集与滤波
+
+## 结果
+
+- 识别偏差可转化为云台控制量，动作可复现。
+- 通过参数与滤波优化，提升瞄准稳定性。

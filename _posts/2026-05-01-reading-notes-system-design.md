@@ -1,27 +1,28 @@
 ---
-title: "阅读笔记：系统设计 / Reading Notes: System Design"
+title: "城市道路物联网智能降尘装置 | 项目介绍"
 date: 2026-05-01
-summary_zh: "三条提醒：边界先行、清晰接口、可观测性。"
-summary_en: "Three reminders: boundaries first, clear interfaces, observability."
-tags: [阅读, 系统设计]
+summary_zh: "完成设备端硬件与软件闭环，实现传感采集与上云链路。"
+summary_en: "完成设备端硬件与软件闭环，实现传感采集与上云链路。"
+tags: [物联网, 嵌入式, 通信]
 ---
 
-<div data-lang="zh">
-  <p>最近重读系统设计相关资料，留下三条提醒：</p>
-  <ul>
-    <li><strong>边界先行：</strong>先定义系统边界和责任，再讨论实现细节。</li>
-    <li><strong>接口清晰：</strong>越早定义稳定的接口，越能减少后期返工。</li>
-    <li><strong>可观测性：</strong>监控、日志和追踪不是“最后补上”，而是设计的一部分。</li>
-  </ul>
-  <p>这些笔记会在后续的案例中继续展开。</p>
-</div>
+## 简介
 
-<div data-lang="en">
-  <p>While revisiting system design materials, three reminders stood out:</p>
-  <ul>
-    <li><strong>Boundaries first:</strong> define ownership before diving into implementation.</li>
-    <li><strong>Clear interfaces:</strong> stable interfaces reduce late-stage rework.</li>
-    <li><strong>Observability:</strong> monitoring, logs, and tracing belong to the design phase.</li>
-  </ul>
-  <p>I will expand these notes with real cases later.</p>
-</div>
+面向城市道路场景的智能降尘装置，集成传感器采集、LoRa 组网与 4G DTU 上云，实现环境数据的稳定采集与上报。
+
+## 负责内容
+
+- 设计硬件电路并完成设备端软件开发，基于 RS485/Modbus RTU 采集环境传感器数据。
+- 实现 DMA 接收、CRC16 校验、状态机解析与超时重试，提高链路稳定性。
+- 搭建 LoRa 设备间通信网络，结合 4G DTU 与 MQTT/JSON 上报阿里云 IoT。
+
+## 关键技术
+
+- STM32 外设驱动与低功耗采集
+- Modbus RTU 协议解析与异常帧处理
+- LoRa 组网与 MQTT 上云
+
+## 结果
+
+- 采集链路稳定，数据按周期上报。
+- 断连恢复与异常处理流程完成联调。
