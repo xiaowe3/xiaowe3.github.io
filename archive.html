@@ -1,0 +1,23 @@
+---
+layout: page
+title: 归档 / Archive
+subtitle: 以年份浏览全部文章 · Browse by year
+permalink: /archive/
+---
+
+{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+<div class="archive">
+  {% for year in years %}
+  <div class="archive-year" data-animate style="--delay: 0.06s;">
+    <h2>{{ year.name }}</h2>
+    <ul class="archive-list">
+      {% for post in year.items %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span>{{ post.date | date: "%m-%d" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

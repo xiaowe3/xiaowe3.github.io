@@ -1,0 +1,18 @@
+title: "Xiaowe Blog"
+description: "中文 / English essays, notes, and experiments."
+lang: "zh-CN"
+timezone: "Asia/Shanghai"
+url: ""
+baseurl: ""
+permalink: /posts/:title/
+markdown: kramdown
+
+author:
+  name: "Xiaowe"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

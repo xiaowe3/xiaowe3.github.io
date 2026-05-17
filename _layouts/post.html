@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="post" data-animate style="--delay: 0s;">
+  <header class="post-header">
+    <div class="post-meta">
+      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+      {% if page.tags %}
+      <span class="dot">•</span>
+      <span>{{ page.tags | join: " · " }}</span>
+      {% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary_zh or page.summary_en %}
+    <p class="post-summary" data-lang="zh">{{ page.summary_zh }}</p>
+    <p class="post-summary" data-lang="en">{{ page.summary_en }}</p>
+    {% endif %}
+  </header>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>

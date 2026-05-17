@@ -1,0 +1,15 @@
+{% assign post = include.post %}
+
+<article class="post-card" data-animate style="--delay: {{ include.delay | default: '0s' }};">
+  <a class="post-card-link" href="{{ post.url | relative_url }}">
+    <div class="post-card-header">
+      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      {% if post.tags %}
+      <span class="post-tags">{{ post.tags | join: " · " }}</span>
+      {% endif %}
+    </div>
+    <h3 class="post-title">{{ post.title }}</h3>
+    <p class="post-excerpt" data-lang="zh">{{ post.summary_zh | default: post.excerpt | strip_html | truncate: 140 }}</p>
+    <p class="post-excerpt" data-lang="en">{{ post.summary_en | default: post.excerpt | strip_html | truncate: 140 }}</p>
+  </a>
+</article>

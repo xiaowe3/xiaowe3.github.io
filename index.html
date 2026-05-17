@@ -1,0 +1,63 @@
+---
+layout: default
+title: 首页 / Home
+---
+
+<section class="hero" data-animate style="--delay: 0s;">
+  <div class="hero-text">
+    <span class="eyebrow">个人博客 / Personal Journal</span>
+    <h1>写下思考，也收藏灵感。</h1>
+    <p class="lead" data-lang="zh">这里记录产品思考、创作过程、阅读笔记与生活碎片，让每一次动手都更有方向。</p>
+    <p class="lead" data-lang="en">Notes on product thinking, creative practice, reading, and life — a studio log for steady progress.</p>
+    <div class="hero-actions">
+      {% assign featured = site.posts | first %}
+      {% if featured %}
+      <a class="btn primary" href="{{ featured.url | relative_url }}">阅读最新 / Latest</a>
+      {% endif %}
+      <a class="btn ghost" href="{{ '/archive/' | relative_url }}">全部归档 / Archive</a>
+    </div>
+  </div>
+  <div class="hero-panel" data-animate style="--delay: 0.1s;">
+    <div class="hero-card">
+      <h2>专栏 / Focus</h2>
+      <ul>
+        <li>产品与策略 / Product Strategy</li>
+        <li>创作流程 / Creative Workflow</li>
+        <li>阅读与写作 / Reading & Writing</li>
+        <li>工具与实验 / Tools & Experiments</li>
+      </ul>
+    </div>
+    <div class="hero-card accent">
+      <h2>更新节奏 / Rhythm</h2>
+      <p data-lang="zh">每周 1-2 篇文章，记录当下正在做的事。</p>
+      <p data-lang="en">1-2 posts weekly, capturing what I am building right now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <h2>最新文章 / Latest</h2>
+      <p class="sub" data-lang="zh">精选最近更新的 6 篇文章。</p>
+      <p class="sub" data-lang="en">A curated selection of the most recent six posts.</p>
+    </div>
+    <a class="text-link" href="{{ '/archive/' | relative_url }}">查看全部 →</a>
+  </div>
+  <div class="post-grid">
+    {% for post in site.posts limit: 6 %}
+      {% assign delay = forloop.index0 | times: 0.06 %}
+      {% assign delay = delay | append: 's' %}
+      {% include post-card.html post=post delay=delay %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section about-slab" data-animate style="--delay: 0.2s;">
+  <div class="about-text">
+    <h2>关于我 / About</h2>
+    <p data-lang="zh">我把这里当作创作的作战室：分享过程、复盘方法、沉淀可复用的思考框架。</p>
+    <p data-lang="en">This is my studio log: sharing process, methods, and reusable thinking frameworks.</p>
+  </div>
+  <a class="btn primary" href="{{ '/about/' | relative_url }}">了解更多 / More</a>
+</section>
