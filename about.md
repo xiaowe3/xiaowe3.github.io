@@ -32,6 +32,6 @@ permalink: /about/
   <p>You can reach me on GitHub or by email.</p>
   <div class="about-links">
     <a class="text-link" href="https://github.com/xiaowe3">GitHub</a>
-    <a class="text-link" href="mailto:hello@example.com">hello@example.com</a>
+    <a class="text-link" href="mailto:tongweishao62@gmail.com">tongweishao62@gmail.com</a>
   </div>
 </div>
