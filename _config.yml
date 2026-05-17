@@ -4,7 +4,7 @@ lang: "zh-CN"
 timezone: "Asia/Shanghai"
 url: ""
 baseurl: ""
-permalink: /posts/:title/
+permalink: /posts/:slug/
 markdown: kramdown
 
 author:
