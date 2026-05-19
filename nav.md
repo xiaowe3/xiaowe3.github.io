@@ -17,9 +17,12 @@ permalink: /nav/
       </li>
     </ul>
 
-    <h2>其他收藏 (待整理)</h2>
+    <h2>其他收藏 / Bookmarks</h2>
     <ul>
-      <li>这里可以继续添加你收藏的更多工具...</li>
+      <li>
+        <a href="https://keysking.com/" target="_blank">波特律动 (Keysking)</a>
+        <p>易懂的嵌入式教程、全面的 STM32 文档以及现代化的开源辅助工具（如串口助手、取模助手等）。</p>
+      </li>
     </ul>
   </div>
 
